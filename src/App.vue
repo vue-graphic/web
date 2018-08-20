@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app dark>
     <v-navigation-drawer
       persistent
       :mini-variant="miniVariant"
@@ -14,6 +14,8 @@
           value="true"
           v-for="(item, i) in items"
           :key="i"
+          @click=""
+          :to="item.route"
         >
           <v-list-tile-action>
             <v-icon v-html="item.icon"></v-icon>
@@ -66,7 +68,8 @@ export default {
       fixed: false,
       items: [{
         icon: 'bubble_chart',
-        title: 'Inspire'
+        title: 'Flocking',
+        route: '/'
       }],
       miniVariant: false,
       right: true,
