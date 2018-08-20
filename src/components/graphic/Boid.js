@@ -1,4 +1,6 @@
 /* eslint-disable */
+const SEPARATION_DIS = 25.0
+
 function Boid(x, y, {p5, sketch, canvasW, canvasH}) {
   this.p5 = p5
   this.sketch = sketch
@@ -63,20 +65,21 @@ Boid.prototype.seek = function(target) {
 }
 
 Boid.prototype.render = function() {
-  const {sketch} = this
-  const opacity = sketch.map(this.velocity.mag(),  0,  this.maxspeed,  200,  255)
+  const {sketch, r} = this
+  const opacity = sketch.map(this.velocity.mag(),  0,  this.maxspeed,  0,  200)
   var theta = this.velocity.heading() + sketch.radians(90)
-  sketch.fill(127,  127,  127,  90)
+  sketch.fill(200,  200,  200,  opacity)
   sketch.noStroke()
   // sketch.stroke(200)
   sketch.push()
   sketch.translate(this.position.x, this.position.y)
   sketch.rotate(theta)
   sketch.beginShape()
-  sketch.vertex(0,  -this.r*2)
-  sketch.vertex(-this.r,  this.r*2)
-  sketch.vertex(this.r,  this.r*2)
+  sketch.vertex(0,  -r*2)
+  sketch.vertex(-r,  r*2)
+  sketch.vertex(r,  r*2)
   sketch.endShape(sketch.CLOSE)
+  // sketch.ellipse(0, 0, SEPARATION_DIS, SEPARATION_DIS);
   sketch.pop()
 }
 
@@ -93,7 +96,7 @@ Boid.prototype.borders = function() {
 // Separation
 // Method checks for nearby boids and steers away
 Boid.prototype.separate = function(boids) {
-  var desiredseparation = 25.0
+  var desiredseparation = SEPARATION_DIS
   var steer = this.sketch.createVector(0, 0)
   var count = 0
   // For every boid in the system,  check if it's too close
