@@ -67,9 +67,14 @@ export default {
       drawer: false,
       fixed: false,
       items: [{
-        icon: 'bubble_chart',
+        icon: 'thumb_up',
         title: 'Flocking',
         route: '/'
+      },
+      {
+        icon: 'thumb_up',
+        title: 'Fibonacci',
+        route: '/fibonacci'
       }],
       miniVariant: false,
       right: true,
