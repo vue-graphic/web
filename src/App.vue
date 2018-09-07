@@ -29,7 +29,7 @@
     
 
     <div class='nav-bar'>
-      <Button class="menuIconWrapper" @click="drawer = !drawer">
+      <Button class="menuIconWrapper" v-if="!drawer" @click="drawer = !drawer">
         <i class="menuIcon material-icons" >more_vert</i>
       </Button>
     </div>
@@ -75,6 +75,11 @@ export default {
         icon: 'thumb_up',
         title: 'Fibonacci',
         route: '/fibonacci'
+      },
+      {
+        icon: 'thumb_up',
+        title: 'Bee',
+        route: '/bee'
       }],
       miniVariant: false,
       right: true,
