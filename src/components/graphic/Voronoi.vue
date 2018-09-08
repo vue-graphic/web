@@ -103,7 +103,10 @@ export default {
       sketch.background(204);
 
       for (let i = 0; i < n; i++) {
-        sketch.fill( i/ n, 0.6, 0.3);
+        sketch.fill(
+            i/ n,
+            sketch.map(i, 0, n, 0, 1),
+            1);
         cells[i].show();
         cells[i].advance();
       }

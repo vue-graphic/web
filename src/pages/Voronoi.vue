@@ -8,14 +8,15 @@
       <v-flex>
         <v-card>
           <v-card-title primary-title>
-            <div class="headline">Honeycomb</div>
+            <div class="headline">Voronoi Diagram</div>
           </v-card-title>
-          <v-card-text>is the behavior organisms exhibit certain behaviors when traveling in groups. This phenomenon, also to seen in fish, birds and insects.</v-card-text>
+          <v-card-text>Voronoi diagram is a way of dividing space into a number of regions.</v-card-text>
 
           <v-card-media
-            src='https://upload.wikimedia.org/wikipedia/commons/b/bc/Honeycomb-Process.png'
+            src='http://i282.photobucket.com/albums/kk273/BruceDSTaylor/Voronoi/voronigiraffe.jpg'
             height="300px"
           />
+          <v-card-text> Each cell in the diagram encloses a particular site, and the surface of the cell contains all the points on the pl ane that are closer to that site than to any other.</v-card-text>
         </v-card>
       </v-flex>
     </v-layout>
@@ -82,11 +83,8 @@
 </template>
 <script>
  /* eslint-disable */
- // http://www.red3d.com/cwr/boids/
- // https://gamedevelopment.tutsplus.com/tutorials/3-simple-rules-of-flocking-behaviors-alignment-cohesion-and-separation--gamedev-3444
-
- //https://www.youtube.com/watch?v=cEIdeElMHhU
- // https://calculate.org.au/wp-content/uploads/sites/15/2016/02/Honeycombs-Hexagonal-Geometry-Answers.pdf
+ // http://forum.woodenboat.com/showthread.php?112363-Voronoi-Diagrams-in-Nature
+//  http://spring-of-mathematics.tumblr.com/post/85519358219/the-beauty-of-voronoi-diagram-in-nature-how
 import Voronoi from '../components/graphic/Voronoi.vue'
 export default {
   components: {Voronoi},
