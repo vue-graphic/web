@@ -60,27 +60,18 @@
 </template>
 
 <script>
+import routes from '@/router/config'
 export default {
   data () {
+    const items = routes.map(item => ({
+      title: item.name,
+      route: item.path
+    }))
     return {
       clipped: false,
       drawer: false,
       fixed: false,
-      items: [{
-        icon: 'thumb_up',
-        title: 'Flocking',
-        route: '/'
-      },
-      {
-        icon: 'thumb_up',
-        title: 'Fibonacci',
-        route: '/fibonacci'
-      },
-      {
-        icon: 'thumb_up',
-        title: 'Bee',
-        route: '/bee'
-      }],
+      items,
       miniVariant: false,
       right: true,
       rightDrawer: false,
